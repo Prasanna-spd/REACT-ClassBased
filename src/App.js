@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { Component } from "react";
+import Navbar from "./component/Navbar";
+import NewsCategory from "./component/NewsCategory";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  apikey = process.env.REACT_APP_NEWS_OCEAN;
+  c = "Prasanna";
+  render() {
+    return (
+      <div>
+        <Navbar />
+        <NewsCategory apikey={this.apikey} />
+      </div>
+    );
+  }
 }
-
-export default App;
